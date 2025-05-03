@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prueba Interactiva HTML y CSS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f8ff;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    textarea {
+      width: 80%;
+      height: 140px;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .feedback {
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correcto {
+      color: green;
+    }
+
+    .incorrecto {
+      color: red;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background: white;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .modal-content img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .ok-btn {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .ok-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Editor de Evaluación HTML y CSS</h1>
+  <p id="pregunta">Pregunta 1: Escribe un encabezado <code>&lt;h1&gt;Mi primer título&lt;/h1&gt;</code></p>
+  <textarea id="editor" placeholder="Escribe tu código aquí..."></textarea><br>
+  <button class="btn" onclick="evaluar()">Evaluar</button>
+  <div class="feedback" id="feedback"></div>
+
+  <div class="modal" id="modalFinal">
+    <div class="modal-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="check">
+      <h2>¡Evaluación final!</h2>
+      <p id="resultadoTexto"></p>
+      <button class="ok-btn" onclick="window.location.href='index.html'">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const preguntas = [
+      { texto: 'Pregunta 1: Escribe <code>&lt;h1&gt;Mi primer título&lt;/h1&gt;</code>', respuesta: '<h1>Mi primer título</h1>' },
+      { texto: 'Pregunta 2: Escribe <code>&lt;p&gt;Hola, soy Juan&lt;/p&gt;</code>', respuesta: '<p>Hola, soy Juan</p>' },
+      { texto: 'Pregunta 3: Escribe <code>&lt;ul&gt;&lt;li&gt;manzana&lt;/li&gt;&lt;li&gt;plátano&lt;/li&gt;&lt;li&gt;uva&lt;/li&gt;&lt;/ul&gt;</code>', respuesta: '<ul><li>manzana</li><li>plátano</li><li>uva</li></ul>' },
+      { texto: 'Pregunta 4: Imagen <code>&lt;img src="foto.jpg" alt="Foto de ejemplo"&gt;</code>', respuesta: '<img src="foto.jpg" alt="Foto de ejemplo">' },
+      { texto: 'Pregunta 5: Enlace <code>&lt;a href="https://google.com"&gt;Buscar&lt;/a&gt;</code>', respuesta: '<a href="https://google.com">Buscar</a>' },
+      { texto: 'Pregunta 6 (CSS): Define color azul a un h1 con CSS.', respuesta: 'h1 { color: blue; }' },
+      { texto: 'Pregunta 7 (CSS): Aplica fondo rojo a un div con id "caja".', respuesta: '#caja { background-color: red; }' },
+      { texto: 'Pregunta 8 (CSS): Cambia el tamaño de letra de p a 18px.', respuesta: 'p { font-size: 18px; }' },
+      { texto: 'Pregunta 9 (CSS): Aplica margen de 20px a todos los lados de body.', respuesta: 'body { margin: 20px; }' },
+      { texto: 'Pregunta 10 (CSS): Centra el texto de un h2.', respuesta: 'h2 { text-align: center; }' }
+    ];
+
+    let actual = 0;
+    let puntaje = 0;
+
+    function normalizar(text) {
+      return text.replace(/\s+/g, '').toLowerCase();
+    }
+
+    function evaluar() {
+      const editor = document.getElementById("editor");
+      const userInput = editor.value.trim();
+      const feedback = document.getElementById("feedback");
+      const modal = document.getElementById("modalFinal");
+      const resultadoTexto = document.getElementById("resultadoTexto");
+      const respuestaEsperada = preguntas[actual].respuesta;
+
+      if (normalizar(userInput) === normalizar(respuestaEsperada)) {
+        feedback.innerHTML = "✅ ¡Correcto!";
+        feedback.className = "feedback correcto";
+        puntaje += 10;
+      } else {
+        feedback.innerHTML = "❌ Incorrecto.";
+        feedback.className = "feedback incorrecto";
+      }
+
+      actual++;
+
+      if (actual < preguntas.length) {
+        setTimeout(() => {
+          feedback.innerHTML = "";
+          document.getElementById("pregunta").innerHTML = preguntas[actual].texto;
+          editor.value = "";
+        }, 1500);
+      } else {
+        setTimeout(() => {
+          modal.style.display = "block";
+          resultadoTexto.innerText = "Tu puntaje fue de " + puntaje + " / 100";
+          document.querySelector(".btn").style.display = "none";
+          editor.style.display = "none";
+          feedback.innerHTML = "";
+          document.getElementById("pregunta").innerText = "🎉 ¡Has completado el quiz!";
+        }, 1500);
+      }
+    }
+  </script>
+</body>
+</html>

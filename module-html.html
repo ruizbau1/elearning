@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso HTML</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="fade-in">
+        <h1 class="logo">E-Learning HTML & CSS</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="module-html.html" class="active">HTML</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+
+  <!-- Módulo 1: Qué es HTML -->
+  <section class="screen active">
+    <div class="container">
+      <h2>Módulo 1: ¿Qué es HTML?</h2>
+      <p>HTML significa <strong>HyperText Markup Language</strong>. Es el lenguaje que usamos para darle estructura a una página web.</p>
+      <p>Por ejemplo, si queremos mostrar un título, usamos la etiqueta <code>&lt;h1&gt;</code>, que indica un encabezado principal.</p>
+  
+      <pre class="code-box animated-code">
+        <span>&lt;h1&gt;Hola Mundo&lt;/h1&gt;</span>
+      </pre>
+  
+      <div class="preview-box">
+        <h1 style="font-size: 2.5em; color: #333;">Hola Mundo</h1>
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="14"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+  
+  
+  <!-- Módulo 2: Estructura básica -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 2: Estructura básica de una página HTML</h2>
+      <p>Una página HTML empieza con <code>&lt;!DOCTYPE html&gt;</code> y se organiza en <code>&lt;html&gt;</code>, que contiene:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><strong>&lt;head&gt;</strong>: información para el navegador (título, estilos, etc.)</li>
+        <li><strong>&lt;body&gt;</strong>: lo que ves en pantalla (textos, imágenes, botones, etc.)</li>
+      </ul>
+  
+      <pre class="code-box animated-code">
+        <span>&lt;!DOCTYPE html&gt;</span>
+        <span>&lt;html&gt;</span>
+        <span>  &lt;head&gt;&lt;title&gt;Mi Página&lt;/title&gt;&lt;/head&gt;</span>
+        <span>  &lt;body&gt;&lt;h1&gt;Hola Mundo&lt;/h1&gt;&lt;/body&gt;</span>
+        <span>&lt;/html&gt;</span>
+      </pre>
+  
+      <div class="preview-box">
+        <h1 style="font-size: 2em; color: #444;">Hola Mundo</h1>
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="28"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+  
+  
+  <!-- Módulo 3: Encabezados -->
+<section class="screen">
+  <div class="container">
+    <h2>Módulo 3: Encabezados HTML</h2>
+    <p>HTML tiene seis niveles de encabezados:</p>
+    <ul style="text-align: left; display: inline-block;">
+      <li><code>&lt;h1&gt;</code>: título más importante</li>
+      <li><code>&lt;h6&gt;</code>: texto más pequeño</li>
+    </ul>
+
+    <pre class="code-box animated-code">
+      <span>&lt;h1&gt;Título principal&lt;/h1&gt;</span>
+      <span>&lt;h2&gt;Subtítulo&lt;/h2&gt;</span>
+      <span>&lt;h3&gt;Sección&lt;/h3&gt;</span>
+      <span>&lt;h6&gt;Texto pequeño&lt;/h6&gt;</span>
+    </pre>
+
+    <div class="preview-box" style="text-align: left;">
+      <h1>Título principal</h1>
+      <h2>Subtítulo</h2>
+      <h3>Sección</h3>
+      <h6>Texto pequeño</h6>
+    </div>
+
+    <div class="progress-bar"><div class="progress" data-progress="42"></div></div>
+    <button class="btn continue">Continuar</button>
+  </div>
+</section>
+
+  
+  <!-- Módulo 4: Etiquetas comunes -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 4: Textos, enlaces e imágenes</h2>
+      <p>HTML permite mostrar contenido en la pantalla mediante etiquetas como:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><code>&lt;p&gt;</code>: crea párrafos de texto</li>
+        <li><code>&lt;a&gt;</code>: crea enlaces que puedes hacer clic</li>
+        <li><code>&lt;img&gt;</code>: muestra imágenes</li>
+      </ul>
+      <p>Ejemplo:</p>
+      <pre class="code-box animated-code">
+        <span>&lt;p&gt;Bienvenido a mi web&lt;/p&gt;</span>
+        <span>&lt;a href=&quot;https://google.com&quot;&gt;Ir a Google&lt;/a&gt;</span>
+        <span>&lt;img src=&quot;foto.jpg&quot; alt=&quot;Foto de ejemplo&quot;&gt;</span>
+      </pre>
+  
+      <div class="preview-box">
+        <p>Bienvenido a mi web</p>
+        <a href="https://google.com" target="_blank">Ir a Google</a><br><br>
+        <img src="foto.jpg" alt="Foto de ejemplo" style="max-width: 200px; border-radius: 8px;">
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="57"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+  
+  
+  <!-- Módulo 5: Listas -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 5: Listas en HTML</h2>
+      <p>HTML tiene 2 tipos de listas:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><code>&lt;ul&gt;</code>: lista no ordenada (con puntos)</li>
+        <li><code>&lt;ol&gt;</code>: lista ordenada (con números)</li>
+      </ul>
+      <p>Dentro de cada lista usamos <code>&lt;li&gt;</code> para cada elemento.</p>
+      <pre class="code-box animated-code">
+        <span>&lt;ul&gt;</span>
+        <span>  &lt;li&gt;Manzana&lt;/li&gt;</span>
+        <span>  &lt;li&gt;Banana&lt;/li&gt;</span>
+        <span>&lt;/ul&gt;</span>
+        <span>&lt;ol&gt;</span>
+        <span>  &lt;li&gt;Paso 1&lt;/li&gt;</span>
+        <span>  &lt;li&gt;Paso 2&lt;/li&gt;</span>
+        <span>&lt;/ol&gt;</span>
+      </pre>
+  
+      <div class="preview-box" style="text-align: left;">
+        <ul>
+          <li>Manzana</li>
+          <li>Banana</li>
+        </ul>
+        <ol>
+          <li>Paso 1</li>
+          <li>Paso 2</li>
+        </ol>
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="71"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+  
+  
+  <!-- Módulo 6: Formularios -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 6: Formularios en HTML</h2>
+      <p>Los formularios sirven para que el usuario ingrese datos como nombre, correo, etc.</p>
+      <p>Se componen de campos como:</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><code>&lt;label&gt;</code>: indica qué debe escribir el usuario</li>
+        <li><code>&lt;input&gt;</code>: campo donde se escribe</li>
+        <li><code>&lt;button&gt;</code>: botón para enviar</li>
+      </ul>
+      <pre class="code-box animated-code">
+        <span>&lt;form&gt;</span>
+        <span>  &lt;label&gt;Nombre:&lt;/label&gt;</span>
+        <span>  &lt;input type=&quot;text&quot;&gt;</span>
+        <span>  &lt;button&gt;Enviar&lt;/button&gt;</span>
+        <span>&lt;/form&gt;</span>
+      </pre>
+  
+      <div class="preview-box">
+        <form>
+          <label>Nombre:</label><br>
+          <input type="text" style="padding: 5px; margin-top: 5px;"><br><br>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="85"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+  
+  
+  <!-- Módulo 7: Comentarios y buenas prácticas -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 7: Comentarios y buenas prácticas</h2>
+      <p>En HTML puedes escribir comentarios que solo tú verás (no el usuario).</p>
+      <p>Sirven para dejar notas o recordatorios. También es importante mantener tu código bien indentado (ordenado).</p>
+      <pre class="code-box animated-code">
+        <span>&lt;!-- Esto es un comentario --&gt;</span>
+        <span>&lt;p&gt;Este texto sí se verá&lt;/p&gt;</span>
+      </pre>
+  
+      <div class="preview-box">
+        <!-- Esto es un comentario -->
+        <p>Este texto sí se verá</p>
+      </div>
+  
+      <div class="progress-bar"><div class="progress" data-progress="100"></div></div>
+      <a href="index.html" class="btn">Finalizar</a>
+    </div>
+  </section>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

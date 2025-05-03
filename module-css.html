@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curso CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="fade-in">
+    <h1 class="logo">E-Learning HTML & CSS</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="module-html.html">HTML</a></li>
+        <li><a href="module-css.html" class="active">CSS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Módulo 1: ¿Qué es CSS? -->
+  <section class="screen active">
+    <div class="container">
+      <h2>Módulo 1: ¿Qué es CSS?</h2>
+      <p>CSS significa <strong>Cascading Style Sheets</strong>. Se utiliza para dar estilo visual a los elementos HTML.</p>
+      <p>Por ejemplo, puedes cambiar el color, la fuente, el tamaño o la posición de los elementos.</p>
+
+      <pre class="code-box animated-code">
+        <span>p {</span>
+        <span>  color: blue;</span>
+        <span>  font-size: 18px;</span>
+        <span>}</span>
+      </pre>
+
+      <div class="preview-box">
+        <p style="color: blue; font-size: 18px;">Este es un texto con CSS aplicado.</p>
+      </div>
+
+      <div class="progress-bar"><div class="progress" data-progress="20"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+
+  <!-- Módulo 2: Selectores básicos -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 2: Selectores básicos</h2>
+      <p>Con CSS puedes seleccionar elementos por su etiqueta, clase o id.</p>
+      <ul style="text-align: left; display: inline-block;">
+        <li><code>p { ... }</code>: selecciona todos los párrafos</li>
+        <li><code>.clase { ... }</code>: selecciona elementos con una clase</li>
+        <li><code>#id { ... }</code>: selecciona un elemento con id específico</li>
+      </ul>
+
+      <pre class="code-box animated-code">
+        <span>.caja {</span>
+        <span>  background: lightblue;</span>
+        <span>  padding: 10px;</span>
+        <span>}</span>
+      </pre>
+
+      <div class="preview-box">
+        <div class="caja" style="background: lightblue; padding: 10px;">Caja con clase .caja</div>
+      </div>
+
+      <div class="progress-bar"><div class="progress" data-progress="40"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+
+  <!-- Módulo 3: Bordes y márgenes -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 3: Bordes y márgenes</h2>
+      <p>Podemos definir bordes, espacio interno (<code>padding</code>) y externo (<code>margin</code>).</p>
+
+      <pre class="code-box animated-code">
+        <span>div {</span>
+        <span>  border: 2px solid black;</span>
+        <span>  padding: 10px;</span>
+        <span>  margin: 20px;</span>
+        <span>}</span>
+      </pre>
+
+      <div class="preview-box">
+        <div style="border: 2px solid black; padding: 10px; margin: 20px;">Caja con borde, padding y margen</div>
+      </div>
+
+      <div class="progress-bar"><div class="progress" data-progress="60"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+
+  <!-- Módulo 4: Colores y fondos -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 4: Colores y fondos</h2>
+      <p>Podemos aplicar colores al texto, fondo o bordes con CSS.</p>
+
+      <pre class="code-box animated-code">
+        <span>h1 {</span>
+        <span>  background-color: yellow;</span>
+        <span>  color: darkred;</span>
+        <span>}</span>
+      </pre>
+
+      <div class="preview-box">
+        <h1 style="background-color: yellow; color: darkred; padding: 10px;">Título con fondo amarillo</h1>
+      </div>
+
+      <div class="progress-bar"><div class="progress" data-progress="80"></div></div>
+      <button class="btn continue">Continuar</button>
+    </div>
+  </section>
+
+  <!-- Módulo 5: Transiciones básicas -->
+  <section class="screen">
+    <div class="container">
+      <h2>Módulo 5: Transiciones básicas</h2>
+      <p>Con CSS puedes hacer animaciones sencillas usando <code>transition</code>.</p>
+
+      <pre class="code-box animated-code">
+        <span>button {</span>
+        <span>  background: blue;</span>
+        <span>  transition: background 0.3s ease;</span>
+        <span>}</span>
+        <span>button:hover {</span>
+        <span>  background: green;</span>
+        <span>}</span>
+      </pre>
+
+      <div class="preview-box">
+        <button style="background: blue; color: white; padding: 10px; border: none;">Pasa el mouse</button>
+      </div>
+
+      <div class="progress-bar"><div class="progress" data-progress="100"></div></div>
+      <a href="index.html" class="btn">Finalizar</a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
